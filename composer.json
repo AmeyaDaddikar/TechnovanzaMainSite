@@ -1,0 +1,22 @@
+{
+    "name": "Technovanza Main",
+    "description": "Technovanza Main Website",
+    "keywords": ["Technovanza", "VJTI"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ameya S. Daddikar",
+            "email": "ameya.daddikar@technovanza.org",
+            "role": "Creator / Main Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "filp/whoops": "~2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Techno\\": "src/"
+        }
+    }
+}
