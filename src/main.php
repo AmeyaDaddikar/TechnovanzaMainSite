@@ -32,12 +32,14 @@
 
 	// echo $response->getContent();
 
-	$dispatcher = \FastRoute\simpleDispatcher(function (\FastRoute\RouteCollector $r) {
-		$routes = include('Routes.php');
+	$routeDefinitionCallback = function (\FastRoute\RouteCollector $r) {
+		$routes = include('routes.php');
 		foreach ($routes as $route) {
 			$r->addRoute($route[0], $route[1], $route[2]);
 		}
-	});
+	};
+
+	$dispatcher = \FastRoute\simpleDispatcher($routeDefinitionCallback);
 
 	$routeInfo = $dispatcher->dispatch($request->getMethod(), $request->getPath());
 	switch ($routeInfo[0]) {
